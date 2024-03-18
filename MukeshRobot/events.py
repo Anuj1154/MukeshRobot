@@ -5,7 +5,7 @@ from pathlib import Path
 from pymongo import MongoClient
 from telethon import events
 
-from MukeshRobot import MONGO_DB_URI, telethn
+from MonsterRobot import MONGO_DB_URI, telethn
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
@@ -74,7 +74,7 @@ def callbackquery(**args):
 
     return decorator
 
-def Mukeshinline(**args):
+def Monsterinline(**args):
     def decorator(func):
         telethn.add_event_handler(func, events.CallbackQuery(**args))
         return func
@@ -148,7 +148,7 @@ def bot(**args):
     return decorator
 
 
-def mukeshrobot(**args):
+def monsterrobot(**args):
     pattern = args.get("pattern", None)
     args.get("disable_edited", False)
     ignore_unsafe = args.get("ignore_unsafe", False)
